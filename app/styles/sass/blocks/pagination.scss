@@ -1,0 +1,130 @@
+.pagination {
+
+    margin-top: 1.5rem;
+    &__select {
+        display: flex;
+        align-items: center;
+        &-title {
+            margin-bottom: 0;
+            margin-right: 10px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+    }
+    @media screen and (min-width: 768px) {
+        background-color: rgba($color: #000000, $alpha: 0.04);
+        border-radius: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+    @media screen and (max-width: 767px) {
+        &__select {
+            background-color: rgba($color: #000000, $alpha: 0.04);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.5rem 1rem;
+            margin-bottom: 1rem;
+            
+        }
+        &__pages {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+
+
+}
+
+.pagination {
+    
+    &-select {
+        width: 90px;
+        padding: 10px 12px;
+        background-color: #fff;
+        border: 1px solid var(--bg-light-septenary);
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 12px;
+        
+    }
+    &-selected {
+        cursor: pointer;
+    }
+    &-options {
+        // background-color: inherit;
+        // border-radius: inherit;
+    }
+    &-option {
+        padding: 0.5rem;
+        transition: all 400ms;
+        color: inherit;
+        text-decoration: none;
+        display: block;
+        width: 100%;
+        &:hover, &.current {
+            background-color: var(--bg-light-septenary);
+        }
+    }
+}
+
+
+.pagination {
+    &-links {
+        display: flex;
+    }
+    &-link {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        color: inherit;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 1px;
+        font-weight: 700;
+        font-size: 12px;
+        &.current {
+            background-color: var(--bg-light-septenary);
+        }
+        &.dots {
+            color: var(--text-light-tertiary);
+        }
+        &.prev, &.next {
+            font-size: 0;
+            line-height: 0;
+            position: relative;
+            &:before {
+                content: "";
+                display: block;
+                width: 20px;
+                height: 20px;
+                background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M8.92259 4.4107C9.24803 4.73614 9.24803 5.26378 8.92259 5.58921L5.34518 9.16663H16.6667C17.1269 9.16663 17.5 9.53972 17.5 9.99996C17.5 10.4602 17.1269 10.8333 16.6667 10.8333H5.34518L8.92259 14.4107C9.24803 14.7361 9.24803 15.2638 8.92259 15.5892C8.59715 15.9147 8.06951 15.9147 7.74408 15.5892L2.74408 10.5892C2.41864 10.2638 2.41864 9.73614 2.74408 9.4107L7.74408 4.4107C8.06951 4.08527 8.59715 4.08527 8.92259 4.4107Z' fill='%231C4650'/%3E%3C/svg%3E%0A");
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+        &.next {
+            transform: scale(-1, 1);
+        }
+        &:not(.prev, .next) {
+            border: 1px solid var(--bg-light-septenary);
+            &:not(.dots):hover {
+                background-color: var(--bg-light-septenary);
+            }
+        }
+    }
+    @media screen and (max-width: 575px) {
+        &-link {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}

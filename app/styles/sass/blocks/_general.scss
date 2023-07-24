@@ -1,0 +1,246 @@
+// GENERAL PROJECT STYLES
+:root {
+    --brand-blue-normal: #B8E1EE;
+    --brand-blue-dark: #B0DDEB;
+    --brand-blue-light: #C1E9F5;
+    --brand-blue-light-max: #F3FBFD;
+
+    --brand-purple-normal: #A68FF1;
+    --brand-purple-dark: #9E85F0;
+    --brand-purple-light: #AF99F5;
+    --brand-purple-light-max: #F1F0F8;
+
+    --text-light-primary: #173A43;
+    --text-light-secondary: #485F65;
+    --text-light-tertiary: #798588;
+    --text-light-quaternary: #ffffff;
+
+    --text-dark-primary: #ffffff;
+    --text-dark-secondary: #798588;
+    --text-dark-tertiary: #485F65;
+    --text-dark-quaternary: #173A43;
+
+    --bg-light-primary: #1C4650;
+    --bg-light-secondary: #28525C;
+    --bg-light-tertiary: #798588;
+    --bg-light-quaternary: #E3E3E3;
+    --bg-light-quinary: #EBEBEB;
+    --bg-light-senary: #EEEEEF;
+    --bg-light-septenary: #F8F9FB;
+    --bg-light-octonary: #ffffff;
+
+    --text-size-main: 18px;
+    --text-size-secondary: 16px;
+    --text-size-tertiary: 14px;
+
+    @media screen and (max-width: 575px) {
+        --text-size-main: 16px;
+        --text-size-secondary: 14px;
+        --text-size-tertiary: 12px;
+    }
+}
+* {
+    box-sizing: border-box;
+}
+html {
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--brand-purple-light-max);
+    color: var(--text-light-primary);
+    font-size: var(--text-size-secondary);
+}
+.text-center {
+    text-align: center;
+}
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+h2 {
+    font-size: 2.75rem;
+}
+h3 {
+    font-size: 2.25rem;
+}
+h4 {
+    font-size: 2rem;
+}
+h5 {
+    font-size: 1.25rem;
+}
+h6 {
+    font-size: 1.125rem;
+}
+@media screen and (max-width: 991px) {
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+
+}
+@media screen and (max-width: 575px) {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.25rem;
+    }
+    h5 {
+        font-size: 0.875rem;
+    }
+
+}
+h1, h2 {
+    letter-spacing: -3%;
+    line-height: 1.1;
+}
+h3, h4, h5, h6 {
+    letter-spacing: -1%;
+    line-height: 1.2;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+}
+a {
+    display: inline-block;
+    svg {
+        vertical-align: middle;
+    }
+}
+
+
+.input {
+    background-color: #fff;
+    border: 1px solid var(--text-light-tertiary);
+    padding: 0.875rem 15rem;
+    color: inherit;
+    border-radius: 24px;
+    display: inline-block;
+}
+
+.btn {
+    padding: 14px 24px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 400ms;
+    border-radius: 45px;
+    transition: all 400ms;
+    border: none;
+    font-weight: 500;
+}
+
+.btn-circle {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.btn-main {
+    font-size: 18px;
+}
+.btn-secondary {
+    font-size: 16px;
+    padding: 1.125rem 2.25rem;
+}
+.btn-tertiary {
+    font-size: 14px;
+    padding: 0.875rem 1.5rem;
+}
+.btn-quaternary {
+    font-size: 12px;
+}
+.btn-smallest {
+    font-size: 10px;
+}
+
+.btn-primary {
+    background-color: var(--brand-purple-normal);
+    color: var(--text-light-quaternary);
+}
+.btn-light {
+    color: var(--text-light-primary);
+    background-color: var(--brand-blue-light);
+}
+.btn-white {
+    background-color: #fff;
+    color: var(--bg-light-primary);
+    &:hover, &.active, &:active {
+        background-color: var(--text-light-primary);
+        color: #fff;
+    }
+}
+
+.btn-dark {
+    background-color: var(--bg-light-primary);
+    color: var(--brand-purple-light-max);
+}
+
+.pre-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    span {
+        background-color: var(--brand-purple-normal);
+        color: #fff;
+        display: inline-block;
+        border-radius: 14px;
+        padding: 8px;
+        font-style: italic;
+    }
+}
+
+.bg-dark {
+    background-color: var(--bg-light-primary);
+    color: var(--text-dark-primary);
+    border-radius: 40px;
+    padding: 40px;
+    @media screen and (max-width: 575px) {
+        padding: 1.5rem;
+        border-radius: 1.5rem;
+    }
+}
+
+
+
+
+
+.link {
+    color: var(--brand-purple-normal);
+    text-decoration: none;
+    position: relative;
+    padding-right: 24px;
+    white-space: nowrap;
+    line-height: 1;
+   
+    &:after {
+        content: "";
+        display: block;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        right: 0;
+        bottom: 0%;
+        background-image: url('../images/dist/arrow-right.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        transition: all 400ms;
+    }
+    &:hover {
+        text-decoration: underline;
+        &:after {
+            transform: rotate(45deg); 
+        }
+    }
+}

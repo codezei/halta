@@ -1,0 +1,31 @@
+.about-info {
+    padding: 50px 0;
+    &__title {
+        margin-bottom: 2rem;
+    }
+    &__text {
+        margin-bottom: 2rem;
+    }
+    &__btn {
+        max-width: 210px;
+        width: 100%;
+    }
+    @media screen and (max-width: 991px) {
+        &__btn {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    @media screen and (max-width: 575px) {
+        padding: 25px 0;
+        &__title {
+            margin-bottom: 1rem
+        }
+        &__text {
+            margin-bottom: 1rem;
+            br+br {
+                display: none;
+            }
+        }
+    }
+}

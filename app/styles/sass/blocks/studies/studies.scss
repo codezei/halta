@@ -1,0 +1,24 @@
+.studies {
+    margin-bottom: 72px;
+    &__title {
+        text-align: center;
+    }
+    &__desc {
+        text-align: center;
+        max-width: 560px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    &__row {
+        margin-bottom: 2rem;
+    }
+    &__col {
+        padding-left: 4px;
+        padding-right: 4px;
+        margin-bottom: 8px;
+    }
+    &__list {
+        margin-left: -4px;
+        margin-right: -4px;
+    }
+}

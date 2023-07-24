@@ -1,0 +1,42 @@
+.studies-info {
+    padding: 50px 0;
+    &__row {
+        align-items: flex-end;
+        margin-bottom: 77px;
+    }    
+    &__title {
+        margin-bottom: 0;
+    }
+    &__text {
+        margin-bottom: 0;
+    }
+    &__list {
+        margin-left: -4px;
+        margin-right: -4px;
+        margin-bottom: 56px;
+    }
+    &__col {
+        padding-left: 4px;
+        padding-right: 4px;
+        margin-bottom: 8px;
+    }
+    &__btn {
+        width: 100%;
+        max-width: 210px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media screen and (max-width: 991px) {
+        padding: 25px 0;
+        &__title {
+            margin-bottom: 1rem;
+        }
+        &__row {
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+

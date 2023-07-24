@@ -1,0 +1,105 @@
+.footer {
+    background-color: var(--bg-light-primary);
+    color: var(--text-dark-primary);
+    padding-top: 2.25rem;
+    padding-bottom: 2rem;
+    &__logo {
+        margin-bottom: 96px;
+        a {
+            color: inherit;
+        }
+    }
+    &__row {
+        justify-content: space-between;
+        &:not(:last-child) {
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #244F59;
+        }
+    }
+    &__btn {
+        max-width: 144px;
+        width: 100%;
+        white-space: nowrap;
+        margin-bottom: 1.5rem;
+        &:not(:last-of-type) {
+            margin-right: 4px;
+        }
+    }
+    &__link {
+        color: inherit;
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        svg {
+            margin-right: 1rem;
+        }
+    }
+    &__privacy {
+        .menu {
+            display: flex;
+            li {
+                &:not(:last-child) {
+                    margin-right: 1.5rem;
+                }
+            }
+        }
+    }
+    &__navigation {
+        &-title {
+            margin-bottom: 2rem;
+        }
+        .menu {
+            li {
+                &:not(:last-child) {
+                    margin-bottom: 1.5rem;
+                }
+            }
+        }
+    }
+    .menu {
+        a {
+            font-size: var(--text-size-tertiary);
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        &__col {
+            &:not(:last-child) {
+                margin-bottom: 1.5rem;
+            }
+        }
+        &__logo {
+            margin-bottom: 1.5rem;
+        }
+        &__navigation {
+            &-title {
+                margin-bottom: 1.5rem;
+            }
+            .menu {
+                li {
+                    &:not(:last-child) {
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+        }
+        
+    }
+    @media screen and (max-width: 575px) {
+        padding-top: 2rem;
+        &__btn {
+            max-width: 132px;
+        }
+        &__col {
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+
+    }
+}
+
+
+
+
