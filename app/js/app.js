@@ -5,12 +5,16 @@ document.addEventListener('DOMContentLoaded', () => {
 	mobMenuToggle ()
 	// Custom JS
 	toggleJoinItems ()
-	faq ()
+	// faq ()
 	
 	stickyHeader ()
 	customSelect()
 	valuesSlider()
 	teamSlider()
+
+	toggleFaqItems('.faqs__item-question')
+	toggleFaqItems('.faq__item-question')
+	toggleFaqCategories('.faq__category', '.faq__item')
 })
 
 
@@ -32,56 +36,103 @@ function toggleJoinItems () {
 	}
 }
 
-function faq () {
-	let faqItems = document.querySelectorAll('.faq__item')
-	if (!faqItems.length) return
-	let faqQuestions = document.querySelectorAll('.faq__item-question')
-	let faqCategories = document.querySelectorAll('.faq__category')
-	let activeCategory = faqCategories[0]
-	let activeQuestion = faqItems[0]
-	let filteringFaqQuestions = []
+function toggleFaqItems (faqItemsQuestion) {
+	let questions = document.querySelectorAll(faqItemsQuestion)
+	if (!questions.length) return
+	let activeQuestion 
 
-	activeCategory.classList.add('active')
-	activeQuestion.classList.add('active')
-
-
-	for(let i = 0; i < faqQuestions.length; i++) {
-		faqQuestions[i].addEventListener('click', function (e) {
-			activeQuestion.classList.remove('active')
+	for(let i = 0; i < questions.length; i++) {
+		questions[i].addEventListener('click', function (e) {
+			if (activeQuestion) {
+				activeQuestion.classList.remove('active')
+			}
 			activeQuestion = e.currentTarget.parentElement
 			activeQuestion.classList.add('active')
 		})
 	}
 
-
-	for(let k = 0; k < faqCategories.length; k++) {
-		faqCategories[k].addEventListener('click', function (e) {
-			activeCategory.classList.remove('active')
+}
+function toggleFaqCategories (faqCategories, faqItems) {
+	let categories = document.querySelectorAll(faqCategories)
+	if (!categories.length) return
+	let items = document.querySelectorAll(faqItems)
+	let activeCategory = categories[0]
+	activeCategory.classList.add('active')
+	for(let k = 0; k < categories.length; k++) {
+		categories[k].addEventListener('click', function (e) {
+			if (activeCategory) {
+				activeCategory.classList.remove('active')
+			}
 			activeCategory = e.currentTarget
 			activeCategory.classList.add('active')
-			filteringFaqQuestions = []
-
-			for(let c = 0; c < faqItems.length; c++) {
-				 if (activeCategory.dataset.category === faqItems[c].dataset.category) {
-					faqItems[c].style.display = ''
-					filteringFaqQuestions.push(faqItems[c])
-					activeQuestion.classList.remove('active')
-					activeQuestion = filteringFaqQuestions[0]
-					activeQuestion.classList.add('active')
-				}  else if (activeCategory.dataset.category === 'all') {
-					faqItems[c].style.display = ''
-					activeQuestion.classList.remove('active')
-					activeQuestion = faqItems[0]
-					activeQuestion.classList.add('active')
-				} else {
-					faqItems[c].style.display = 'none'
-				}
-
-			}
+			filterItems(items, activeCategory)
 		})
 	}
 
+	function filterItems (filteringItems, flteringActiveCategory) {
+		for(let c = 0; c < filteringItems.length; c++) {
+			if (flteringActiveCategory.dataset.category === filteringItems[c].dataset.category) {
+				filteringItems[c].style.display = ''
+		   }  else if (flteringActiveCategory.dataset.category === 'all') {
+				filteringItems[c].style.display = ''
+		   } else {
+				filteringItems[c].style.display = 'none'
+		   }
+
+	   }
+	}
 }
+
+// function faq () {
+// 	let faqItems = document.querySelectorAll('.faq__item')
+// 	if (!faqItems.length) return
+// 	let faqQuestions = document.querySelectorAll('.faq__item-question')
+// 	let faqCategories = document.querySelectorAll('.faq__category')
+// 	let activeCategory = faqCategories[0]
+// 	let activeQuestion = faqItems[0]
+// 	let filteringFaqQuestions = []
+
+// 	activeCategory.classList.add('active')
+// 	activeQuestion.classList.add('active')
+
+
+// 	for(let i = 0; i < faqQuestions.length; i++) {
+// 		faqQuestions[i].addEventListener('click', function (e) {
+// 			activeQuestion.classList.remove('active')
+// 			activeQuestion = e.currentTarget.parentElement
+// 			activeQuestion.classList.add('active')
+// 		})
+// 	}
+
+
+// 	for(let k = 0; k < faqCategories.length; k++) {
+// 		faqCategories[k].addEventListener('click', function (e) {
+// 			activeCategory.classList.remove('active')
+// 			activeCategory = e.currentTarget
+// 			activeCategory.classList.add('active')
+// 			filteringFaqQuestions = []
+
+// 			for(let c = 0; c < faqItems.length; c++) {
+// 				 if (activeCategory.dataset.category === faqItems[c].dataset.category) {
+// 					faqItems[c].style.display = ''
+// 					filteringFaqQuestions.push(faqItems[c])
+// 					activeQuestion.classList.remove('active')
+// 					activeQuestion = filteringFaqQuestions[0]
+// 					activeQuestion.classList.add('active')
+// 				}  else if (activeCategory.dataset.category === 'all') {
+// 					faqItems[c].style.display = ''
+// 					activeQuestion.classList.remove('active')
+// 					activeQuestion = faqItems[0]
+// 					activeQuestion.classList.add('active')
+// 				} else {
+// 					faqItems[c].style.display = 'none'
+// 				}
+
+// 			}
+// 		})
+// 	}
+
+// }
 
 // мобильное меню
 function mobMenuToggle () {
