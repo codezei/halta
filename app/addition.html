@@ -1,0 +1,419 @@
+<!--#include virtual="/parts/header.html" -->
+
+<main class="page">
+    <!--#include virtual="/parts/header-block.html" -->
+    <form class="form js-form-validation" method="post" action="">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+     
+                    <div class="form__step active" data-step="1">
+                        <h2 class="form__title">
+                            General info
+                        </h2>
+                        <div class="form__block">
+                            <div class="form__progress">
+                                <div class="form__progress-inner"></div>
+                            </div>
+                            <div class="row form__row">
+                                <div class="form__col col-12">
+                                    <div class="select form-select">
+                                        <div class="selected form-selected">
+                                            <input type="text" placeholder="Zip code" value="" name="zipcode" autocomplete="none" required>
+                                            <span class="error-message">Error message</span>
+                                        </div>
+                                        <div class="options form-options">
+                                            <div class="option form-option" data-option="01000-02791">
+                                                <div class="form-option-row">
+                                                    <div class="form-option-name">
+                                                        Massachusetts
+                                                    </div>
+                                                    <div class="form-option-value">
+                                                        01000 - 02791
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="option form-option" data-option="02801-02940">
+                                                <div class="form-option-row">
+                                                    <div class="form-option-name">
+                                                        Rhode Island
+                                                    </div>
+                                                    <div class="form-option-value">
+                                                        02801 - 02940
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="option form-option" data-option="03031-03904">
+                                                <div class="form-option-row">
+                                                    <div class="form-option-name">
+                                                        New Hampshire
+                                                    </div>
+                                                    <div class="form-option-value">
+                                                        03031 - 03904
+                                                    </div>
+                                                </div>
+                                            </div>                        
+                                        </div>
+                
+                                    </div>
+                              
+                                </div>
+                            </div>
+                            <div class="row form__row">
+                                <div class="form__col col-12">
+                                    <button type="button" class="btn btn-primary btn-tertiary form__btn">Continue</button>
+                                </div>  
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form__step" data-step="2">
+             
+                        <h2 class="form__title">
+                            Verify your identity
+                        </h2>
+                        <div class="form__block">
+                            <div class="form__progress">
+                                <div class="form__progress-inner"></div>
+                            </div>
+                            <div class="row form__row">
+                                <div class="form__col col-12">
+                                    <input type="text" class="input" placeholder="Date of birth" name="birthday" required>
+                                    <span class="error-message">Error message</span>
+                                </div>
+                            </div>
+                            <div class="row form__row">
+                                <div class="form__col col-12">
+                                    <input type="tel" class="input" placeholder="Phone nmber" name="phonenumber" required>
+                                    <span class="error-message">The number must contain only digits</span>
+                                </div>
+                            </div>
+                            <div class="row form__row">
+                                <div class="form__col col-12">
+                                    <button type="button" class="btn btn-primary btn-tertiary form__btn">Continue</button>
+                                </div>  
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form__step" data-step="3">
+    
+                        <h2 class="form__title">
+                            Personal Health form
+                        </h2>
+                        <div class="form__block">
+                            <div class="form__progress">
+                                <div class="form__progress-inner"></div>
+                            </div>
+                            <div class="form__row row">
+                                <div class="form__col col-12">
+                                    <h6 class="form__row-title">
+                                        Gender assigned at birth
+                                    </h6>
+                                    <div class="form__labels">
+                                        <label class="form__label">
+                                            <input type="checkbox" name="gender" class="checkbox" value="female">
+                                            <span class="checkbox-custom checkbox-custom--fill">
+                                                <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8047 0.195262C12.0651 0.455612 12.0651 0.877722 11.8047 1.13807L4.4714 8.47141C4.21106 8.73175 3.78894 8.73175 3.5286 8.47141L0.195262 5.13807C-0.0650874 4.87772 -0.0650874 4.45561 0.195262 4.19526C0.455612 3.93491 0.877722 3.93491 1.13807 4.19526L4 7.05719L10.8619 0.195262C11.1223 -0.0650874 11.5444 -0.0650874 11.8047 0.195262Z" fill="currentColor"/>
+                                                </svg>                                
+                                            </span> 
+                                            <span>Female</span>
+                                        </label>
+                                        <label class="form__label">
+                                            <input type="checkbox" name="gender" class="checkbox" value="male">
+                                            <span class="checkbox-custom checkbox-custom--fill">
+                                                <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8047 0.195262C12.0651 0.455612 12.0651 0.877722 11.8047 1.13807L4.4714 8.47141C4.21106 8.73175 3.78894 8.73175 3.5286 8.47141L0.195262 5.13807C-0.0650874 4.87772 -0.0650874 4.45561 0.195262 4.19526C0.455612 3.93491 0.877722 3.93491 1.13807 4.19526L4 7.05719L10.8619 0.195262C11.1223 -0.0650874 11.5444 -0.0650874 11.8047 0.195262Z" fill="currentColor"/>
+                                                </svg>                                
+                                            </span> 
+                                            <span>Male</span>
+                                        </label>
+                                        <label class="form__label">
+                                            <input type="checkbox" name="gender" class="checkbox" value="non-binar">
+                                            <span class="checkbox-custom checkbox-custom--fill">
+                                                <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8047 0.195262C12.0651 0.455612 12.0651 0.877722 11.8047 1.13807L4.4714 8.47141C4.21106 8.73175 3.78894 8.73175 3.5286 8.47141L0.195262 5.13807C-0.0650874 4.87772 -0.0650874 4.45561 0.195262 4.19526C0.455612 3.93491 0.877722 3.93491 1.13807 4.19526L4 7.05719L10.8619 0.195262C11.1223 -0.0650874 11.5444 -0.0650874 11.8047 0.195262Z" fill="currentColor"/>
+                                                </svg>                                
+                                            </span> 
+                                            <span>Non - binar</span>
+                                        </label>
+                                        <label class="form__label">
+                                            <input type="checkbox" name="gender" class="checkbox" value="intersex">
+                                            <span class="checkbox-custom checkbox-custom--fill">
+                                                <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8047 0.195262C12.0651 0.455612 12.0651 0.877722 11.8047 1.13807L4.4714 8.47141C4.21106 8.73175 3.78894 8.73175 3.5286 8.47141L0.195262 5.13807C-0.0650874 4.87772 -0.0650874 4.45561 0.195262 4.19526C0.455612 3.93491 0.877722 3.93491 1.13807 4.19526L4 7.05719L10.8619 0.195262C11.1223 -0.0650874 11.5444 -0.0650874 11.8047 0.195262Z" fill="currentColor"/>
+                                                </svg>                                
+                                            </span> 
+                                            <span>Intersex</span>
+                                        </label>
+                                    </div>
+                                    <span class="error-message">Error message</span>
+
+        
+                                </div>
+                            </div>
+                            <div class="form__row row">
+                                <div class="form__col col-12">
+                                    <h6 class="form__row-title">
+                                        What is this person’s race?
+                                    </h6>
+                                    <div class="form__labels">
+                                        <label class="form__label">
+                                            <input type="radio" name="race" class="checkbox" required value="white">
+                                            <span class="checkbox-custom checkbox-custom--fill">
+                                                <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8047 0.195262C12.0651 0.455612 12.0651 0.877722 11.8047 1.13807L4.4714 8.47141C4.21106 8.73175 3.78894 8.73175 3.5286 8.47141L0.195262 5.13807C-0.0650874 4.87772 -0.0650874 4.45561 0.195262 4.19526C0.455612 3.93491 0.877722 3.93491 1.13807 4.19526L4 7.05719L10.8619 0.195262C11.1223 -0.0650874 11.5444 -0.0650874 11.8047 0.195262Z" fill="currentColor"/>
+                                                </svg>                                
+                                            </span> 
+                                            <span>White</span>
+                                        </label>
+                                        <label class="form__label">
+                                            <input type="radio" name="race" class="checkbox" required value="Black, African, Negro">
+                                            <span class="checkbox-custom checkbox-custom--fill">
+                                                <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8047 0.195262C12.0651 0.455612 12.0651 0.877722 11.8047 1.13807L4.4714 8.47141C4.21106 8.73175 3.78894 8.73175 3.5286 8.47141L0.195262 5.13807C-0.0650874 4.87772 -0.0650874 4.45561 0.195262 4.19526C0.455612 3.93491 0.877722 3.93491 1.13807 4.19526L4 7.05719L10.8619 0.195262C11.1223 -0.0650874 11.5444 -0.0650874 11.8047 0.195262Z" fill="currentColor"/>
+                                                </svg>                                
+                                            </span> 
+                                            <span>Black, African, Negro</span>
+                                        </label>
+                                        <label class="form__label">
+                                            <input type="radio" name="race" class="checkbox" required value="American Indian or Alaska Native">
+                                            <span class="checkbox-custom checkbox-custom--fill">
+                                                <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8047 0.195262C12.0651 0.455612 12.0651 0.877722 11.8047 1.13807L4.4714 8.47141C4.21106 8.73175 3.78894 8.73175 3.5286 8.47141L0.195262 5.13807C-0.0650874 4.87772 -0.0650874 4.45561 0.195262 4.19526C0.455612 3.93491 0.877722 3.93491 1.13807 4.19526L4 7.05719L10.8619 0.195262C11.1223 -0.0650874 11.5444 -0.0650874 11.8047 0.195262Z" fill="currentColor"/>
+                                                </svg>                                
+                                            </span> 
+                                            <span>American Indian or Alaska Native</span>
+                                        </label>
+                                        <label class="form__label">
+                                            <input type="radio" name="race" class="checkbox" required value="Asian">
+                                            <span class="checkbox-custom checkbox-custom--fill">
+                                                <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8047 0.195262C12.0651 0.455612 12.0651 0.877722 11.8047 1.13807L4.4714 8.47141C4.21106 8.73175 3.78894 8.73175 3.5286 8.47141L0.195262 5.13807C-0.0650874 4.87772 -0.0650874 4.45561 0.195262 4.19526C0.455612 3.93491 0.877722 3.93491 1.13807 4.19526L4 7.05719L10.8619 0.195262C11.1223 -0.0650874 11.5444 -0.0650874 11.8047 0.195262Z" fill="currentColor"/>
+                                                </svg>                                
+                                            </span> 
+                                            <span>Asian</span>
+                                        </label>
+                                    </div>
+                                    <span class="error-message">Error message</span>
+
+        
+                                </div>
+                            </div>
+
+                            <div class="row form__row">
+                                <div class="form__col col-12">
+                                    <button type="button" class="btn btn-primary btn-tertiary form__btn">Continue</button>
+                                </div>  
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form__step" data-step="4">
+    
+                        <h2 class="form__title">
+                            Informed consent
+                        </h2>
+                        <p class="form__desc">
+                            Sign the informed consent document
+                        </p>
+                        <div class="form__block">
+                            <div class="form__progress">
+                                <div class="form__progress-inner">
+        
+                                </div>
+                            </div>
+                            <div class="row form__row">
+                                <div class="form__col col-6">
+                                    <input type="text" class="input" placeholder="First name" name="firstname" required>
+                                    <span class="error-message">Error message</span>
+                                </div>
+                                <div class="form__col col-6">
+                                    <input type="text" class="input" placeholder="Last name" name="lastname" required>
+                                    <span class="error-message">Error message</span>
+                                </div>  
+                            </div>
+                            <div class="row form__row">
+                                <div class="form__col col-12">
+                                    <input type="text" class="input" placeholder="Today’s date" name="todaydate" required>
+                                    <span class="error-message">Error message</span>
+                                </div>
+                            </div>
+                            <div class="form__row row">
+                                <div class="form__col col-12">
+                                    <h5 class="form__row-title">
+                                        I acknowledge the following :
+                                    </h5>
+                                    <ul>
+                                        <li>LORE IPSUMDOLOR SET AMET</li>
+                                        <li>LORE IPSUMDOLOR SET AMET</li>
+                                        <li>LORE IPSUMDOLOR SET AMET</li>
+                                    </ul>
+                                   <div class="form__labels">
+                                    <label class="form__label">
+                                        <input type="checkbox" name="agree-info" class="checkbox" required checked value="agree-info">
+                                        <span class="checkbox-custom checkbox-custom--purple">
+                                            <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8047 0.195262C12.0651 0.455612 12.0651 0.877722 11.8047 1.13807L4.4714 8.47141C4.21106 8.73175 3.78894 8.73175 3.5286 8.47141L0.195262 5.13807C-0.0650874 4.87772 -0.0650874 4.45561 0.195262 4.19526C0.455612 3.93491 0.877722 3.93491 1.13807 4.19526L4 7.05719L10.8619 0.195262C11.1223 -0.0650874 11.5444 -0.0650874 11.8047 0.195262Z" fill="currentColor"/>
+                                            </svg>                                
+                                        </span> 
+                                        <span>I’ve read and agree with info</span>
+                                    </label>
+                                   </div>
+                                   <span class="error-message">Error message</span>
+                                </div>
+                            </div>
+                            <div class="row form__row">
+                                <div class="form__col col-12">
+                                    <button type="button" class="btn btn-primary btn-tertiary form__btn">Continue</button>
+                                </div>  
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form__step" data-step="5">
+
+                        <h2 class="form__title">
+                            Consent form
+                        </h2>
+
+                        <div class="form__block">
+  
+                            <div class="form__progress">
+                                <div class="form__progress-inner"></div>
+                            </div>
+                            <div class="form__row row">
+                                <div class="form__col col-12">
+                                    <div class="form__content">
+                                        <img src="./images/dist/consent-logo.png" alt="" class="form__content-logo">
+                                        <h5 class="form__content-title">
+                                            Match with a Pfizer clinical trial
+                                        </h5>
+                                        <img src="./images/dist/consent-img.png" alt="" class="form__content-img">
+                                        <p class="form__consent-text">
+                                            Build a business payments platform that gives your customers flexible, secure commercial payments.
+                                        </p>
+                                    </div>
+                                    <div class="form__download">
+                                        <h4 class="form__download-title">
+                                            Download
+                                        </h4>
+                                        <a href="" download class="link">Example Consent Form (PDF)</a>
+                                    </div>
+                                    <div class="form__labels">
+                                        <label class="form__label">
+                                            <input type="checkbox" name="agree-consent" class="checkbox" required value="agree-consent">
+                                            <span class="checkbox-custom checkbox-custom--purple">
+                                                <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8047 0.195262C12.0651 0.455612 12.0651 0.877722 11.8047 1.13807L4.4714 8.47141C4.21106 8.73175 3.78894 8.73175 3.5286 8.47141L0.195262 5.13807C-0.0650874 4.87772 -0.0650874 4.45561 0.195262 4.19526C0.455612 3.93491 0.877722 3.93491 1.13807 4.19526L4 7.05719L10.8619 0.195262C11.1223 -0.0650874 11.5444 -0.0650874 11.8047 0.195262Z" fill="currentColor"/>
+                                                </svg>                                
+                                            </span> 
+                                            <span>I have read and agree to the consent form</span>
+                                        </label>
+                                    </div>
+                                    <span class="error-message">Error message</span>
+                                </div>
+                            </div>
+                            <div class="row form__row">
+                                <div class="form__col col-12">
+                                    <button type="button" class="btn btn-primary btn-tertiary form__btn">Continue</button>
+                                </div>  
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form__step" data-step="6">
+                  
+                        <h2 class="form__title">
+                            Additional verify
+                        </h2>
+                        <div class="form__block">
+                            <div class="form__progress">
+                                <div class="form__progress-inner"></div>
+                            </div>
+                            <div class="form__row row">
+                                <div class="form__col col-12">
+                                    <h6 class="form__row-title">
+                                        Hic sunt quis id excepturi pariatur et quia ?
+                                    </h6>
+                                    <div class="form__labels">
+                                        <label class="form__label">
+                                      
+                                            <input type="radio" name="some-question" class="radio" required value="yes">
+                                            <span class="radio-custom radio-custom--fill"></span> 
+                                            <span>Yes</span>
+                                        </label>
+                                        <label class="form__label">
+                                         
+                                            <input type="radio" name="some-question" class="radio" required value="nope">
+                                            <span class="radio-custom radio-custom--fill"></span> 
+                                            <span>Nope</span>
+                                        </label>
+                                        <label class="form__label">
+                                     
+                                            <input type="radio" name="some-question" class="radio" required value="other">
+                                            <span class="radio-custom radio-custom--fill"></span> 
+                                            <span>Other</span>
+                                        </label>
+                                    </div>
+                                    <span class="error-message">Error message</span>
+        
+                                </div>
+                            </div>
+
+                            <div class="form__row row">
+                                <div class="form__col col-12">
+                                    <h6 class="form__row-title">
+                                        Hic sunt quis id excepturi pariatur et quia ?
+                                    </h6>
+                                    <div class="form__labels">
+                                        <label class="form__label">
+          
+                                            <input type="radio" name="some-question-2" class="radio" required value="yes">
+                                            <span class="radio-custom radio-custom--fill">
+                                  
+                                            </span> 
+                                            <span>Yes</span>
+                                        </label>
+                                        <label class="form__label">
+           
+                                            <input type="radio" name="some-question-2" class="radio" required value="nope">
+                                            <span class="radio-custom radio-custom--fill">
+                                 
+                                            </span> 
+                                            <span>Nope</span>
+                                        </label>
+                                        <label class="form__label">
+     
+                                            <input type="radio" name="some-question-2" class="radio" required value="other">
+                                            <span class="radio-custom radio-custom--fill">
+                                 
+                                            </span> 
+                                            <span>Other</span>
+                                        </label>
+                                    </div>
+                                    <span class="error-message">Error message</span>
+        
+                                </div>
+                            </div>
+
+
+                            <div class="row form__row">
+                                <div class="form__col col-12">
+                                    <button type="submit" class="btn btn-primary btn-tertiary form__btn">Submit</button>
+                                </div>  
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+</main>
+<!--#include virtual="/parts/footer-block.html" -->
+<!--#include virtual="/parts/footer.html" -->

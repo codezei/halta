@@ -42,7 +42,8 @@
 }
 
 .pagination {
-    
+    position: relative;
+    z-index: 2;
     &-select {
         width: 90px;
         padding: 10px 12px;

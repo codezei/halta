@@ -3,7 +3,7 @@
     z-index: 1;
     cursor: pointer;
     .selected {
-        position: relative;
+        // position: relative;
         padding-right: 15px;
         &:after {
             content: "";
@@ -13,7 +13,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%) rotate(180deg);
-            right: 0;
+            right: 15px;
             background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M7.52925 5.52851C7.7896 5.26816 8.21171 5.26816 8.47206 5.52851L12.4721 9.52851C12.7324 9.78886 12.7324 10.211 12.4721 10.4713C12.2117 10.7317 11.7896 10.7317 11.5292 10.4713L8.00065 6.94273L4.47206 10.4713C4.21171 10.7317 3.7896 10.7317 3.52925 10.4713C3.2689 10.211 3.2689 9.78886 3.52925 9.52851L7.52925 5.52851Z' fill='%231C4650'/%3E%3C/svg%3E%0A");
             background-size: contain;
             background-repeat: no-repeat;

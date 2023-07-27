@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	toggleFaqItems('.faqs__item-question')
 	toggleFaqItems('.faq__item-question')
 	toggleFaqCategories('.faq__category', '.faq__item')
+
+
+	formValidation ()
+	switchFormSteps ()
 })
 
 
@@ -169,10 +173,24 @@ function stickyHeader () {
 
 function customSelect() {
 	let select = document.querySelectorAll('.select')
+
 	if (!select.length) return
 	for(let i = 0; i < select.length; i++) {
+
+		
 		select[i].addEventListener('click', function (e) {
+			let selected = e.currentTarget.querySelector('.selected')
+			let input = selected.querySelector('input')
 			e.currentTarget.classList.toggle('open')
+	
+			if (e.target.classList.contains('option') && e.target.dataset.option) {
+			
+				if (input) {
+
+					input.value = e.target.dataset.option
+					console.log(input.value)
+				}
+			}
 		})
 	}
 
@@ -226,3 +244,132 @@ function teamSlider() {
 		// }
 	});
 }
+
+
+
+
+function switchFormSteps () {
+	let formSteps = document.querySelectorAll('.form__step')
+	if (!formSteps.length) return
+	let activeFormStep = document.querySelector('.form__step.active')
+	changeProgressbar(+activeFormStep.dataset.step)
+	for (let i = 0; i < formSteps.length; i++) {
+		let btnNextStep = formSteps[i].querySelector('.form__btn')
+		if (btnNextStep.type === 'button') {
+			btnNextStep.addEventListener('click', function () {
+				let formStepInputs = formSteps[i].querySelectorAll('input[required]')
+				for (let k = 0; k < formStepInputs.length; k++) {
+					validateInput(formStepInputs[k])
+				}
+				checkFormStepError(formSteps[i], nextFormStep)
+			})
+		}
+		// btnNextStep.type === "button" && btnNextStep.addEventListener('click', function () {
+		// 	let formStepInputs = formSteps[i].querySelectorAll('input[required]')
+		// 	for (let k = 0; k < formStepInputs.length; k++) {
+		// 		validateInput(formStepInputs[k])
+		// 	}
+		// 	checkFormStepError(formSteps[i], nextFormStep)
+		// })
+	}
+}
+
+
+function checkFormStepError (currentFormStep, nextFormStepCallback) {
+	let hasErrors = currentFormStep.querySelector('.error')
+	if (!hasErrors) {
+		nextFormStepCallback()
+	}
+}
+
+
+
+function nextFormStep () {
+	let activeFormStep = document.querySelector('.form__step.active')
+	activeFormStep.classList.remove('active')
+	activeFormStep.nextElementSibling.classList.add('active')
+
+	changeProgressbar(+activeFormStep.nextElementSibling.dataset.step)
+}
+
+
+
+function changeProgressbar (currentStep) {
+	let bars = document.querySelectorAll('.form__progress')
+	setTimeout(function (){
+		bars[currentStep - 1].children[0].style.width = `${(currentStep / (bars.length)) * 100}%`
+	}, 100)
+
+
+
+}
+
+function formValidation (callbackSubmitFunc) {
+	let form = document.querySelector('.js-form-validation')
+	if (!form) return
+	form.addEventListener('keyup', function (e) {
+		validateInput(e.target)
+	})
+	form.addEventListener('submit', function (e) {
+		e.preventDefault()
+		let formInputs = e.currentTarget.querySelectorAll('input[required]')
+		for (let k = 0; k < formInputs.length; k++) {
+			validateInput(formInputs[k])
+		}
+		checkFormStepError(e.target, function () {
+			// колбэк функци после успешной валидации
+			if (callbackSubmitFunc) {
+				callbackSubmitFunc()
+			}
+			console.log('form success submit')
+		})
+	})
+}
+
+function validateInput(input) {
+	const regexPatterns = {
+		firstname: /^[а-яА-Яa-zA-Z\s]+$/,
+		lastname: /^[а-яА-Яa-zA-Z\s]+$/,
+		email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+		phonenumber: /^\+?[0-9]+$/,
+		zipcode: /^[0-9]{5}\-[0-9]{5}$/
+	};
+	let currentInput = input.form[input.name]
+
+	let validateResult = false
+	if (currentInput.length) {
+		validateResult = [...currentInput].find(checkbox=>{
+			return checkbox.checked
+		})
+	} else if (currentInput.type === "checkbox" || currentInput.type === "radio") {
+		validateResult = currentInput.checked
+	} else if (regexPatterns[currentInput.name]) {
+		validateResult = regexPatterns[currentInput.name].test(currentInput.value);
+	} else {
+		validateResult = !!currentInput.value.length
+	}
+	setInputValidationResult(currentInput, validateResult)
+	return validateResult;
+  }
+
+  function setInputValidationResult (input, result) {
+	if (result) {
+		if (input.length) {
+			input[0].parentElement.parentElement.classList.remove('error')
+		} else if (input.type === "checkbox" || input.type === "radio") {
+			input.parentElement.parentElement.classList.remove('error')
+		} else {
+			input.classList.remove('error')
+		}
+		
+	} else {
+		if (input.length) {
+			input[0].parentElement.parentElement.classList.add('error')
+		} else if (input.type === "checkbox" || input.type === "radio") {
+			input.parentElement.parentElement.classList.add('error')
+		} else {
+			input.classList.add('error')
+		}
+		
+	}
+  }

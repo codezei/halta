@@ -138,6 +138,9 @@ a {
     transition: all 400ms;
     border: none;
     font-weight: 500;
+    svg {
+        vertical-align: middle;
+    }
 }
 
 .btn-circle {
@@ -189,6 +192,16 @@ a {
     color: var(--brand-purple-light-max);
 }
 
+
+.btn-transparent {
+    border: 1px solid rgba($color: #000000, $alpha: 0.16);
+    color: inherit;
+    &:hover, &.active, &:active {
+        background-color: var(--brand-purple-normal);
+        color: #fff;
+        border: 1px solid var(--brand-purple-normal);
+    }
+}
 .pre-title {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
@@ -222,27 +235,31 @@ a {
     color: var(--brand-purple-normal);
     text-decoration: none;
     position: relative;
-    padding-right: 24px;
     white-space: nowrap;
     line-height: 1;
-   
-    &:after {
-        content: "";
-        display: block;
-        width: 16px;
-        height: 16px;
-        position: absolute;
-        right: 0;
-        bottom: 0%;
-        background-image: url('../images/dist/arrow-right.svg');
-        background-size: contain;
-        background-repeat: no-repeat;
-        transition: all 400ms;
+    &--arrow {
+        padding-right: 24px;
+        &:after {
+            content: "";
+            display: block;
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            right: 0;
+            bottom: 0%;
+            background-image: url('../images/dist/arrow-right.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: all 400ms;
+        }
+        &:hover {
+            &:after {
+                transform: rotate(45deg); 
+            }
+        }
     }
+   
     &:hover {
         text-decoration: underline;
-        &:after {
-            transform: rotate(45deg); 
-        }
     }
 }

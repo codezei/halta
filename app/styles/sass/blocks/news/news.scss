@@ -155,12 +155,20 @@
 }
 
 
-.news-select {
-    padding: 1rem 1.5rem;
-    border: 1px solid var(--brand-purple-normal);
-    border-radius: 32px;
-    width: 100%;
-    color: #000000;
-    background-color: var(--brand-purple-light-max);
-    font-size: var(--text-size-secondary);
+.news {
+    &-select {
+        padding: 1rem 1.5rem;
+        border: 1px solid var(--brand-purple-normal);
+        border-radius: 32px;
+        width: 100%;
+        color: #000000;
+        background-color: var(--brand-purple-light-max);
+        font-size: var(--text-size-secondary);
+    }
+    &-selected {
+        input {
+            width: 0;
+            height: 0;
+        }
+    }
 }
