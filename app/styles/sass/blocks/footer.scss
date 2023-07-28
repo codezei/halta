@@ -25,12 +25,16 @@
         &:not(:last-of-type) {
             margin-right: 4px;
         }
+
     }
     &__link {
         color: inherit;
         text-decoration: none;
         display: flex;
         align-items: center;
+        &:hover {
+            text-decoration: underline;
+        }
         svg {
             margin-right: 1rem;
         }

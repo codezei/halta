@@ -1,5 +1,7 @@
 // // Import vendor jQuery plugin example
-// import '~/app/libs/mmenu/dist/mmenu.js'
+// import '~/app/js/wow.js'
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
 	mobMenuToggle ()
@@ -22,7 +24,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	toggleContent ('.account-content', '.account-content__edit-btn')
 	toggleContent ('.account-sidebar', '.account-sidebar-toggle')
+
+	let wow = new WOW({
+		boxClass: 'wow',
+		animateClass: 'animated',
+		offset :0,
+		mobile: true,
+		live: true}).init()
+
 })
+
 
 
 function toggleJoinItems () {

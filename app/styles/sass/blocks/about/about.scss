@@ -36,12 +36,35 @@
 
     &__img {
         margin: 72px auto;
+        position: relative;
+        z-index: 1;
         img {
             width: 100%;
         }
+        @media screen and (min-width: 1200px) {
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 360px;
+                height: 360px;
+                background-image: url(../images/dist/square.png);
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+                top: 100%;
+                right: 0;
+                transform: translate(50%, -50%);
+                z-index: -1;
+                pointer-events: none;
+            }
+        }
+
 
     }
     &__chapter {
+        position: relative;
+        z-index: 1;
        &:not(:last-of-type) {
         margin-bottom: 150px;
        }

@@ -13,33 +13,33 @@
                     <div class="row form__row">
                         <div class="form__col col-6">
                             <input type="text" class="input" placeholder="First name" name="firstname" required>
-                            <span class="error-message">The field must contain at least 2 characters.</span>
+                            <span class="error-message">Use only letters.</span>
                         </div>
                         <div class="form__col col-6">
                             <input type="text" class="input" placeholder="Last name" name="lastname" required>
-                            <span class="error-message">The field must contain at least 2 characters.</span>
+                            <span class="error-message">Use only letters.</span>
                         </div>  
                     </div>
                     <div class="row form__row">
                         <div class="form__col col-12 col-sm-6">
                             <input type="text" class="input" placeholder="Zip code" name="zipcode" required>
-                            <span class="error-message">The field must contain at least 10 characters.</span>
+                            <span class="error-message">Fill in the field in the format хххх-ххххх</span>
                         </div>
                         <div class="form__col col-12 col-sm-6">
                             <input type="tel" class="input" placeholder="Phone number" name="phonenumber" required>
-                            <span class="error-message">Error message</span>
+                            <span class="error-message">Use only numbers</span>
                         </div>  
                     </div>
                     <div class="row form__row">
                         <div class="form__col col-12">
                             <input type="email" class="input" placeholder="Email" name="email" required>
-                            <span class="error-message">Error message</span>
+                            <span class="error-message">The email address must contain the "@" symbol</span>
                         </div>
                     </div>
                     <div class="row form__row">
                         <div class="form__col col-12">
                             <textarea name="text" rows="4" class="input" placeholder="Free text"></textarea>
-                            <span class="error-message">Error message</span>
+                            <!-- <span class="error-message">Error message</span> -->
                         </div>
                     </div>
                     <div class="row form__row">
@@ -51,15 +51,18 @@
                     </div>
                     <div class="row form__row align-items-center">
                         <div class="form__col col-12 col-sm-6 col-lg-7">
-                            <label class="form__label">
-                                <input type="checkbox" name="agree-privacy" class="checkbox" required id="agree-privacy">
-                                <span class="checkbox-custom checkbox-custom--purple">
-                                    <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8047 0.195262C12.0651 0.455612 12.0651 0.877722 11.8047 1.13807L4.4714 8.47141C4.21106 8.73175 3.78894 8.73175 3.5286 8.47141L0.195262 5.13807C-0.0650874 4.87772 -0.0650874 4.45561 0.195262 4.19526C0.455612 3.93491 0.877722 3.93491 1.13807 4.19526L4 7.05719L10.8619 0.195262C11.1223 -0.0650874 11.5444 -0.0650874 11.8047 0.195262Z" fill="currentColor"/>
-                                    </svg>                                
-                                </span> <span>I accept all <a href="privacy.html" target="_blank">Privacy & Policy</a></span>
-                                <span class="error-message">Required field</span>
-                            </label>
+                            <div class="form__labels">
+                                <label class="form__label">
+                                    <input type="checkbox" name="agree-privacy" class="checkbox" required id="agree-privacy">
+                                    <span class="checkbox-custom checkbox-custom--purple">
+                                        <svg width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd" d="M11.8047 0.195262C12.0651 0.455612 12.0651 0.877722 11.8047 1.13807L4.4714 8.47141C4.21106 8.73175 3.78894 8.73175 3.5286 8.47141L0.195262 5.13807C-0.0650874 4.87772 -0.0650874 4.45561 0.195262 4.19526C0.455612 3.93491 0.877722 3.93491 1.13807 4.19526L4 7.05719L10.8619 0.195262C11.1223 -0.0650874 11.5444 -0.0650874 11.8047 0.195262Z" fill="currentColor"/>
+                                        </svg>                                
+                                    </span> <span>I accept all <a href="privacy.html" target="_blank">Privacy & Policy</a></span>
+                                </label>
+                                <span class="error-message">You must agree to the privacy policy</span>
+                            </div>
+
                         </div>
                         <div class="form__col col-12 col-sm-6 col-lg-5">
                             <button type="submit" class="btn btn-primary btn-tertiary form__btn">Submit</button>

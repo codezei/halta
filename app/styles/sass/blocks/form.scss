@@ -60,7 +60,8 @@
             margin-right: 1.5rem;
         }
         span {
-            display: inline-block;vertical-align: middle;
+            // display: inline-block;
+            vertical-align: middle;
         }
         a {
             color: inherit;
@@ -124,7 +125,12 @@
         }
     }
     @media screen and (max-width: 575px) {
-        
+        &__progress {
+            margin-bottom: 1rem;
+        }
+        &__content {
+            padding: 1rem;
+        }
     }
 }
 
