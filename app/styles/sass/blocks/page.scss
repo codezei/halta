@@ -2,4 +2,9 @@
     padding-top: 140px;
     padding-bottom: 70px;
     min-height: 900px;
+
+    @media screen and (max-width: 575px) {
+        padding-top: 100px;
+        padding-bottom: 3rem;
+    }
 }

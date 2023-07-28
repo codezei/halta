@@ -57,11 +57,14 @@
             }
         }
     }
-    .menu {
-        a {
-            font-size: var(--text-size-tertiary);
-        }
+    &__subscribe {
+        max-width: 310px;
     }
+    // .menu {
+    //     a {
+    //         font-size: var(--text-size-tertiary);
+    //     }
+    // }
 
     @media screen and (max-width: 991px) {
         &__col {

@@ -54,10 +54,8 @@
         }
         .menu {
             display: flex;
-            // flex-direction: column;
             align-items: center;
-            // font-weight: 500;
-            // font-size: 14px;  
+            font-size: var(--text-size-tertiary);
             li {
                 padding: 0 14px;
             }
@@ -73,9 +71,10 @@
             }
         }
         &-btn {
-            padding: 1rem 1.5rem;
+            padding: 0.875rem 1.5rem;
+            font-size: var(--text-size-tertiary);
             &:not(:last-child) {
-                margin-right: 1.5rem;
+                margin-right: 0.5rem;
             }
         }
 
@@ -299,7 +298,6 @@
         display: inline-block;
         color: inherit;
         text-decoration: none;
-        font-weight: 500;
         &:hover {
             text-decoration: underline;
         }

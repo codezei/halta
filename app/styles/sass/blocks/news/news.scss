@@ -53,9 +53,10 @@
             align-items: center;
             justify-content: space-between;
             margin-bottom: 3rem;
+            flex-wrap: wrap;
         }
         &-title {
-            margin-bottom: 0;
+            margin: 0.5rem 0;
         }
 
         &-item {
@@ -67,12 +68,13 @@
             max-width: 400px;
             width: 100%;
             margin-right: 0;
+            flex-shrink: 0;
         }
     }
     @media screen and (max-width: 991px) {
         &__articles {
             &-select {
-                max-width: 180px;
+                max-width: 280px;
           
             }
             &-header {

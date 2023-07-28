@@ -26,7 +26,16 @@
     }
     &__desc {
         margin-bottom: 2rem;
+        max-width: 550px;
     }
+    &__btn {
+        max-width: 160px;
+        width: 100%;
+        &:not(:last-of-type) {
+            margin-right: 8px;
+        }
+    }
+
 
 
     @media screen and (max-width: 991px) and (min-width: 768px) {
@@ -80,6 +89,9 @@
 
         &__desc {
             margin-bottom: 1.5rem;
+        }
+        &__btn {
+            max-width: 135px;
         }
     }
 }

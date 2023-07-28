@@ -13,9 +13,9 @@
     }
     &__category {
         white-space: nowrap;
-        // &:not(:last-child) {
-        //     margin-right: 4px;
-        // }
+        &:not(:last-child) {
+            margin-right: 4px;
+        }
 
     }
 

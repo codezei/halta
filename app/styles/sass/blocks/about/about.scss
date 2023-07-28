@@ -326,6 +326,13 @@
             }
         }
     }
+    @media screen and (max-width: 575px) {
+        &-slide {
+            &__title {
+                margin-bottom: 1rem;
+            }
+        }
+    }
     // @media screen and (max-width: 575px) {
     //     &-pagination {
     //         flex-wrap: wrap;

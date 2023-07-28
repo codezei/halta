@@ -31,7 +31,7 @@
 
     &__btn {
         width: 100%;
-        margin-top: 1.5rem;
+        // margin-top: 1.5rem;
     }
     &__progress {
         height: 12px;
@@ -267,6 +267,7 @@
     display: none;
     // font-weight: 700;
     font-size: var(--text-size-tertiary);
+    padding-left: 12px;
 }
 .error ~ .error-message {
     display: block;

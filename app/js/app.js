@@ -19,6 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	formValidation ()
 	switchFormSteps ()
+
+	toggleContent ('.account-content', '.account-content__edit-btn')
+	toggleContent ('.account-sidebar', '.account-sidebar-toggle')
 })
 
 
@@ -372,4 +375,18 @@ function validateInput(input) {
 		}
 		
 	}
+  }
+
+
+
+  function toggleContent (block, target) {
+	let container = document.querySelector(block)
+	
+	let btn = document.querySelector(target)
+	if (!container || !btn) return
+
+	btn.addEventListener('click', function (e) {
+		e.currentTarget.classList.toggle('active')
+		container.classList.toggle('active')
+	})
   }
