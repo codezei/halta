@@ -264,7 +264,7 @@
             position: relative;
             padding-bottom: 1.25rem;
             font-size: var(--text-size-main);
-            color: var(--brand-purple-normal);
+            color: var(--brand-purple-light);
             opacity: 0.8;
             cursor: pointer;
             &:before {
@@ -276,6 +276,7 @@
                 width: calc(100% - 20px);
                 height: 1px;
                 background-color: var(--brand-purple-light);
+                opacity: 0.5;
             }
             &:after {
                 content: "";
@@ -285,12 +286,13 @@
                 right: 0;
                 width: 0;
                 height: 1px;
-                background-color: var(--brand-purple-normal);
+                background-color: var(--brand-purple-dark);
+
                 transition: all 800ms;
             }
 
             &-active {
-                color: var(--brand-purple-normal);
+                color: var(--brand-purple-dark);
                 opacity: 1;
                 &:after {
                     width: calc(100% - 20px);

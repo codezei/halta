@@ -74,13 +74,16 @@
         &--female:before {
             content: url(../images/dist/female-icon.svg);
         }
+        &--male:before {
+            content: url(../images/dist/male-icon.svg);
+        }
     }
     &__category {
         margin-bottom: 0;
-        padding: 1.25rem 2rem;
+        padding: 1rem 1.25rem;
         border-radius: 39px;
         border: 1px solid var(--brand-purple-normal);
-        margin-bottom: 1.25rem;
+        margin-bottom: 1.25rem;line-height: 1;
     }
     &__row {
         width: 100%;

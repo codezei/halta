@@ -5,32 +5,25 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 	mobMenuToggle ()
-	// Custom JS
 	toggleJoinItems ()
-	// faq ()
-	
 	stickyHeader ()
 	customSelect()
 	valuesSlider()
 	teamSlider()
-
 	toggleFaqItems('.faqs__item-question')
 	toggleFaqItems('.faq__item-question')
 	toggleFaqCategories('.faq__category', '.faq__item')
-
-
 	formValidation ()
 	switchFormSteps ()
-
 	toggleContent ('.account-content', '.account-content__edit-btn')
 	toggleContent ('.account-sidebar', '.account-sidebar-toggle')
-
 	let wow = new WOW({
 		boxClass: 'wow',
 		animateClass: 'animated',
 		offset :0,
 		mobile: true,
 		live: true}).init()
+	smoothScroll() 
 
 })
 
@@ -184,7 +177,6 @@ function stickyHeader () {
 	})
 }
 
-
 function customSelect() {
 	let select = document.querySelectorAll('.select')
 
@@ -196,13 +188,12 @@ function customSelect() {
 			let selected = e.currentTarget.querySelector('.selected')
 			let input = selected.querySelector('input')
 			e.currentTarget.classList.toggle('open')
-	
 			if (e.target.classList.contains('option') && e.target.dataset.option) {
-			
 				if (input) {
-
 					input.value = e.target.dataset.option
-					console.log(input.value)
+
+					// проверка валидации селекта с вводом цифр зип код
+					validateInput(input)
 				}
 			}
 		})
@@ -259,9 +250,6 @@ function teamSlider() {
 	});
 }
 
-
-
-
 function switchFormSteps () {
 	let formSteps = document.querySelectorAll('.form__step')
 	if (!formSteps.length) return
@@ -296,8 +284,6 @@ function checkFormStepError (currentFormStep, nextFormStepCallback) {
 	}
 }
 
-
-
 function nextFormStep () {
 	let activeFormStep = document.querySelector('.form__step.active')
 	activeFormStep.classList.remove('active')
@@ -306,16 +292,11 @@ function nextFormStep () {
 	changeProgressbar(+activeFormStep.nextElementSibling.dataset.step)
 }
 
-
-
 function changeProgressbar (currentStep) {
 	let bars = document.querySelectorAll('.form__progress')
 	setTimeout(function (){
 		bars[currentStep - 1].children[0].style.width = `${(currentStep / (bars.length)) * 100}%`
 	}, 100)
-
-
-
 }
 
 function formValidation (callbackSubmitFunc) {
@@ -324,6 +305,7 @@ function formValidation (callbackSubmitFunc) {
 	form.addEventListener('keyup', function (e) {
 		validateInput(e.target)
 	})
+	
 	form.addEventListener('submit', function (e) {
 		e.preventDefault()
 		let formInputs = e.currentTarget.querySelectorAll('input[required]')
@@ -332,12 +314,14 @@ function formValidation (callbackSubmitFunc) {
 		}
 		checkFormStepError(e.target, function () {
 			// колбэк функци после успешной валидации
-			if (callbackSubmitFunc) {
-				callbackSubmitFunc()
-			}
+			// if (callbackSubmitFunc) {
+			// 	callbackSubmitFunc()
+			// }
+			e.target.submit()
 			console.log('form success submit')
 		})
 	})
+
 }
 
 function validateInput(input) {
@@ -346,7 +330,9 @@ function validateInput(input) {
 		lastname: /^[а-яА-Яa-zA-Z\s]+$/,
 		email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
 		phonenumber: /^\+?[0-9]+$/,
-		zipcode: /^[0-9]{5}\-[0-9]{5}$/
+		zipcode: /^[0-9]{5}\-[0-9]{5}$/,
+		birthday: /^[0-9]{2}\.[0-9]{2}\.[0-9]{4}$/,
+		todaydate: /^[0-9]{2}\.[0-9]{2}\.[0-9]{4}$/
 	};
 	let currentInput = input.form[input.name]
 
@@ -388,8 +374,6 @@ function validateInput(input) {
 	}
   }
 
-
-
   function toggleContent (block, target) {
 	let container = document.querySelector(block)
 	
@@ -401,3 +385,38 @@ function validateInput(input) {
 		container.classList.toggle('active')
 	})
   }
+
+
+function smoothScroll() {
+	let linkNav = document.querySelectorAll('[href^="#"]')
+	let headerHeight = document.querySelector('.header').getBoundingClientRect().height
+	let V = 0.2;
+	for (let i = 0; i < linkNav.length; i++) {
+		linkNav[i].addEventListener('click', function (e) { //по клику на ссылку
+			e.preventDefault(); //отменяем стандартное поведение
+			let w = window.pageYOffset // производим прокрутка прокрутка
+			let hash = this.href.replace(/[^#]*(.*)/, '$1');
+			let tar = document.querySelector(hash) // к id элемента, к которому нужно перейти
+			let t = tar.getBoundingClientRect().top - headerHeight
+			let start = null;
+
+			requestAnimationFrame(step); // подробнее про функцию анимации [developer.mozilla.org]
+			function step(time) {
+				if (start === null) {
+					start = time;
+				}
+				var progress = time - start,
+					r = (t < 0 ? Math.max(w - progress / V, w + t) : Math.min(w + progress / V, w + t));
+				window.scrollTo(0, r);
+				if (r != w + t) {
+					requestAnimationFrame(step)
+				} else {
+					location.hash = hash // URL с хэшем
+				}
+			}
+			if (t > 1 || t < -1) {
+				requestAnimationFrame(step)
+			}
+		});
+	}
+}

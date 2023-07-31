@@ -12,7 +12,8 @@
     animation-delay: 200ms;
     transform: translateY(-100%);
     .promo &.sticky:not(.active) &__inner{
-        background-color: rgba($color: #1c4650, $alpha: 0.5);
+        // background-color: rgba($color: #1c4650, $alpha: 0.5);
+        background-color: var(--bg-light-secondary);
         color: #fff;
     }
     
@@ -221,9 +222,6 @@
 
     @media screen and (max-width: 575px) {
         padding: 15px 0;
-        // &__logo {
-        //     max-width: 250px;
-        // }
     }
 }
 
@@ -249,16 +247,10 @@
                 height: 8px;
                 border-left: 1px solid currentColor;
                 border-bottom: 1px solid currentColor;
-                // background-image: url(../images/dist/chevron-arrow.svg);
-                // background-size: contain;
-                // background-position: center;
-                // background-repeat: no-repeat;
                 left: calc(100% + 14px);
                 top: 50%;
                 transform: translateY(-50%) rotate(-45deg);
                 pointer-events: none;
-                // transform: rotate(90deg);
-                
             }
         }
         
@@ -277,17 +269,9 @@
             box-shadow: 0px 23px 30px 0px rgba(0, 0, 0, 0.06);
             border-radius: 16px;
             background-color: inherit;
-            // padding: 1rem;
-            // border-top: 1px solid var(--bg-light-secondary);
             li:last-child {
                 border-bottom: none;
             }
-            // a {
-            //     padding: 0;
-            // }
-            // li:not(:last-child) {
-            //     margin-bottom: 1rem;
-            // }
         }
         &:hover .sub-menu {
             display: block;

@@ -28,6 +28,7 @@
     --bg-light-senary: #EEEEEF;
     --bg-light-septenary: #F8F9FB;
     --bg-light-octonary: #ffffff;
+    --bg-light-dark: #0E353F;
 
     --bg-dark-octonary: #090B0C;
 
@@ -41,6 +42,21 @@
         --text-size-tertiary: 12px;
     }
 }
+:root {
+    scroll-behavior: unset !important;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: unset !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    :root {
+        scroll-behavior: unset !important;
+    }
+}
+
 * {
     box-sizing: border-box;
 }
@@ -175,7 +191,26 @@ a {
     border-radius: 24px;
     display: inline-block;
     width: 100%;
+    &.error, &.error:focus {
+        border: 1px solid #DF4646;
+    }
+    &:active, &:focus {
+        border: 1px solid rgba($color: #000000, $alpha: 0.48);
+    }
+    &:disabled {
+        opacity: 0.66;
+    }
 
+}
+
+.error-message {
+    display: none;
+    font-size: var(--text-size-tertiary);
+    padding-left: 12px;
+    color: #DF4646;
+}
+.error ~ .error-message {
+    display: block;
 }
 
 .btn {
@@ -208,65 +243,112 @@ a {
     }
 }
 
-// .btn-main {
-//     font-size: 18px;
-// }
-// .btn-secondary {
-//     font-size: 16px;
-//     padding: 1.125rem 2.25rem;
-// }
-// .btn-tertiary {
-//     font-size: 14px;
-//     padding: 0.875rem 1.5rem;
-// }
-// .btn-quaternary {
-//     font-size: 12px;
-// }
-// .btn-smallest {
-//     font-size: 10px;
-// }
-
 .btn-primary {
     background-color: var(--brand-purple-normal);
     color: var(--text-light-quaternary);
+
+    &:hover, &.active {
+        background-color: var(--brand-purple-dark);
+    }
+    &:active {
+        background-color: var(--brand-purple-light);
+    }
+    &:disabled {
+        background-color: var(--bg-light-quinary);
+        color: var(--text-light-primary);
+    }
+
 }
 .btn-light {
     color: var(--text-light-primary);
     background-color: var(--brand-blue-light);
+
+    &:hover, &.active {
+        background-color: var(--brand-blue-dark);
+    }
+    &:active {
+        background-color: var(--brand-blue-light);
+    }
+    &:disabled {
+        background-color: var(--bg-light-quinary);
+        color: var(--text-light-primary);
+    }
 }
+
 .btn-white {
     background-color: #fff;
     color: var(--bg-light-primary);
-    &:hover, &.active, &:active {
-        background-color: var(--text-light-primary);
+
+    &:hover, &.active {
+        background-color: var(--bg-light-dark);
         color: #fff;
+    }
+    &:active {
+        background-color: var(--bg-light-secondary);
+        color: #fff;
+    }
+    &:disabled {
+        background-color: var(--bg-light-quinary);
+        color: var(--text-light-primary);
     }
 }
 
 .btn-dark {
     background-color: var(--bg-light-primary);
     color: var(--brand-purple-light-max);
+    &:hover, &.active {
+        background-color: var(--bg-light-dark);
+        color: #fff;
+    }
+    &:active {
+        background-color: var(--bg-light-secondary);
+        color: #fff;
+    }
+    &:disabled {
+        background-color: var(--bg-light-quinary);
+        color: var(--text-light-primary);
+    }
 }
 
 
 .btn-transparent {
-    border: 1px solid rgba($color: #000000, $alpha: 0.16);
+    // border: 1px solid rgba($color: #000000, $alpha: 0.16);
+    border: 1px solid var(--brand-purple-normal);
     color: inherit;
-    &:hover, &.active, &:active {
+
+    &:hover{
+        border: 1px solid var(--brand-purple-dark);
+   
+    }
+    &.active {
+        border: 1px solid var(--brand-purple-normal);
         background-color: var(--brand-purple-normal);
         color: #fff;
-        border: 1px solid var(--brand-purple-normal);
     }
+    &:active {
+        background-color: var(--brand-purple-light);
+        
+    }
+    &:disabled {
+        background-color: var(--bg-light-quaternary);
+        color: var(--text-light-primary);
+    }
+
 }
 
 .btn-gray {
-    background-color: rgba($color: #000000, $alpha: 0.04);
-    color: var(--bg-dark-octonary);
+    background-color: var(--bg-light-septenary);
+    color: var(--bg-light-primary);
 
-    &:hover, &.active, &:active {
-        background-color: var(--bg-dark-octonary);
-        color: #fff;
-        border: 1px solid var(--bg-dark-octonary);
+    &:hover, &.active {
+        background-color: #F3F4F5;
+    }
+    &:active {
+        background-color: #F9FCFF;
+    }
+    &:disabled {
+        background-color: var(--bg-light-quinary);
+        color: var(--text-light-primary);
     }
 }
 
@@ -344,5 +426,6 @@ a {
    
     &:hover {
         text-decoration: underline;
+        color: var(--brand-purple-dark);
     }
 }

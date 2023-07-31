@@ -13,7 +13,9 @@
 <body>
 
 <main class="page">
-    <header class="header">
+    
+
+<header class="header">
     <div class="container">
         <div class="header__inner">
             <div class="logo header__logo">
@@ -58,6 +60,7 @@
                             <li class="menu-item">
                                 <a href="./faqs.html">FAQ</a>
                             </li>
+                        </ul>
                     </div>
 
                 </nav>
@@ -79,18 +82,18 @@
 </header>
     <section class="studies">
     <div class="container">
-        <h2 class="studies__title">
+        <h2 class="studies__title wow fadeInLeft">
             Live Studies
         </h2>
-        <p class="studies__desc">
+        <p class="studies__desc wow fadeInRight">
             Explore our curated collection of medical research live studies tailored to specific therapeutic areas. Join us in shaping the future of healthcare together.
         </p>
-        <div class="studies__search">
+        <div class="studies__search wow fadeInUp">
             <form class="search">
                 <div class="search__inner">
-                    <input type="search" class="search__input" placeholder="Zip code" required autocomplete="none" name="zipcode">
+                    <input type="text" class="search__input" placeholder="Zip code" required autocomplete="off" name="zipcode">
                     <button class="search__btn btn btn-dark">
-                        Subscribe
+                        Search
                     </button>
                 </div>
             </form>
@@ -118,19 +121,12 @@
                         <p class="study__text">
                             Study investigating lifestyle interventions for preventing heart disease in women. Data
                             needed on risk factors and outcomes.
-
                         </p>
-       
-
                     </div>
-
-
                     <div class="study__footer">
                         <a href="" class="study__link link link--arrow">More Details</a>
                     </div>
                 </div>
-
-
             </div>
             <div class="studies__col col-lg-4 col-md-6">
                 <div class="study">
@@ -333,13 +329,13 @@
         <div class="row action__row">
             <div class="col-md-7 action__col">
                 <div class="action__content">
-                    <h2 class="action__title">
+                    <h2 class="action__title wow fadeInleft">
                         Unlock Exclusive Content by Subscribing to Our Updates
                     </h2>
-                    <p class="action__desc">
+                    <p class="action__desc wow fadeInRight">
                         Stay informed about the latest advancements, breakthroughs, and trends in medical research
                     </p>
-                    <div class="action__subscribe">
+                    <div class="action__subscribe wow fadeInUp">
                         <form class="subscribe">
                             <div class="subscribe__inner">
                                 <input type="email" class="subscribe__input" placeholder="Email" required>
@@ -406,7 +402,7 @@
                     Company
                 </h5>
                 <div class="menu-company-menu-container">
-                    <ul class="menu company-menu" id="company-menu">
+                    <ul class="menu company-menu" id="company2-menu">
                         <li class="menu-item">
                             <a href="">About</a>
                         </li>
@@ -447,7 +443,22 @@
         </div>
         <div class="footer__row row">
             <div class="col-md-6 col-lg-4">
+                <div class="footer__select">
+                    <div class="select lang-select">
+                        <div class="selected lang-selected">
+                            <img src="./images/dist/GB.svg" alt=""> Eng
+                        </div>
+                        <div class="options lang-options">
+                            <a href="" class="option lang-option current">
+                                <img src="./images/dist/GB.svg" alt=""> Eng
+                            </a>
+                            <a href="" class="option lang-option">
+                                <img src="./images/dist/SP.svg" alt=""> Esp
+                            </a>                      
+                        </div>
 
+                    </div>
+                </div>
             </div>
             <div class="col-md-6 col-lg-4">
                 <nav class="social">

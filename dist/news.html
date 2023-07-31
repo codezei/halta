@@ -13,7 +13,9 @@
 <body>
 
 <main class="page">
-    <header class="header">
+    
+
+<header class="header">
     <div class="container">
         <div class="header__inner">
             <div class="logo header__logo">
@@ -58,6 +60,7 @@
                             <li class="menu-item">
                                 <a href="./faqs.html">FAQ</a>
                             </li>
+                        </ul>
                     </div>
 
                 </nav>
@@ -81,8 +84,8 @@
     <div class="container">
         <div class="row news__row">
             <div class="col-lg-6 news__col">
-                <h2 class="news__title">News</h2>
-                <p class="news__desc">Stay updated with the latest news in the life science and executive search industries. At Prestige Scientific, we bring you valuable insights, featured stories, press releases, and more. Our news section is your go-to source for staying informed about recent developments and trends in these dynamic fields.</p>
+                <h2 class="news__title wow fadeInleft">News</h2>
+                <p class="news__desc wow fadeInUp">Stay updated with the latest news in the life science and executive search industries. At Prestige Scientific, we bring you valuable insights, featured stories, press releases, and more. Our news section is your go-to source for staying informed about recent developments and trends in these dynamic fields.</p>
             </div>
             <div class="col-lg-6 news__col">
                 <img src="./images/dist/news-img.png" alt="" class="news__img">
@@ -91,24 +94,23 @@
         </div>
         <div class="news__articles">
             <div class="news__articles-header">
-                <h2 class="news__articles-title">Articles18</h2>
-                <div class="news__articles-select">
+                <h2 class="news__articles-title wow fadeInLeft">Articles18</h2>
+                <div class="news__articles-select wow fadeInRight">
 
                     <form class="select news-select">
                         <div class="selected news-selected">
                             Select category
-                            <input type="text" value="">
+                            <input type="text" value="" name="category">
                         </div>
                         <div class="options news-options">
                             <div class="option news-option current" data-option="category1">Category1</div>
                             <div class="option news-option" data-option="category2">Category2</div>
                             <div class="option news-option" data-option="category3">Category3</div>                        
                         </div>
-
-                    </а>
+                    </form>
                 </div>
             </div>
-            <div class="news__articles-list">
+            <div class="news__articles-list wow fadeInUp">
                 <div class="news__articles-item">
                     <div class="article-preview">
                         <div class="article-preview__inner">
@@ -278,13 +280,13 @@
         <div class="row action__row">
             <div class="col-md-7 action__col">
                 <div class="action__content">
-                    <h2 class="action__title">
+                    <h2 class="action__title wow fadeInLeft">
                         Unlock Exclusive Content by Subscribing to Our Blog
                     </h2>
-                    <p class="action__desc">
+                    <p class="action__desc wow fadeInRight">
                         Stay informed about the latest advancements, breakthroughs, and trends in medical research
                     </p>
-                    <div class="action__subscribe">
+                    <div class="action__subscribe wow fadeInUp">
                         <form class="subscribe">
                             <div class="subscribe__inner">
                                 <input type="email" class="subscribe__input" placeholder="Email" required>
@@ -350,7 +352,7 @@
                     Company
                 </h5>
                 <div class="menu-company-menu-container">
-                    <ul class="menu company-menu" id="company-menu">
+                    <ul class="menu company-menu" id="company2-menu">
                         <li class="menu-item">
                             <a href="">About</a>
                         </li>
@@ -391,7 +393,22 @@
         </div>
         <div class="footer__row row">
             <div class="col-md-6 col-lg-4">
+                <div class="footer__select">
+                    <div class="select lang-select">
+                        <div class="selected lang-selected">
+                            <img src="./images/dist/GB.svg" alt=""> Eng
+                        </div>
+                        <div class="options lang-options">
+                            <a href="" class="option lang-option current">
+                                <img src="./images/dist/GB.svg" alt=""> Eng
+                            </a>
+                            <a href="" class="option lang-option">
+                                <img src="./images/dist/SP.svg" alt=""> Esp
+                            </a>                      
+                        </div>
 
+                    </div>
+                </div>
             </div>
             <div class="col-md-6 col-lg-4">
                 <nav class="social">

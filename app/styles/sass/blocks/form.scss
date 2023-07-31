@@ -266,15 +266,3 @@
     }
 }
 
-// .error {
-//     border: 1px solid red !important;
-// }
-.error-message {
-    display: none;
-    // font-weight: 700;
-    font-size: var(--text-size-tertiary);
-    padding-left: 12px;
-}
-.error ~ .error-message {
-    display: block;
-}

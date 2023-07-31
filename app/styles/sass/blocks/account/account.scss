@@ -113,3 +113,44 @@
             display: none;
     }
 }
+
+
+.tooltip {
+    position: relative;
+    padding-bottom: 1rem;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
+    svg {
+        margin-right: 5px;
+    }
+    &__inner {
+        display: none;
+        &:after {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            border-left: 7.5px solid transparent; /* половина ширины треугольника */
+            border-right: 7.5px solid transparent; /* половина ширины треугольника */
+            border-bottom: 10px solid var(--bg-light-primary); /* высота треугольника */
+            position: absolute;
+            bottom: 100%;
+            left: 15px;
+        }
+    }
+    &:hover &__inner {
+        display: block;
+        max-width: 400px;
+        width: 100%;
+        padding: 1rem;
+        border-radius: 1rem;
+        background-color: var(--bg-light-primary);
+        color: #fff;
+        position: absolute;
+        left: 0;
+        top: calc(100% - 1px);
+        z-index: 1;
+    }
+    
+}
