@@ -6,6 +6,9 @@
     &__img {
         position: relative;
         display: inline-block;
+        img {
+            border-radius: 24px;
+        }
     }
     &__watch {
         position: absolute;

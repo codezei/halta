@@ -1,4 +1,6 @@
 .account {
+    position: relative;
+    z-index: 2;
     &-sidebar {
         background-color: rgb(232, 231, 238);
         border-radius: 36px;

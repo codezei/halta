@@ -63,6 +63,34 @@ function toggleFaqItems (faqItemsQuestion) {
 	}
 
 }
+
+function autoScrollFaqCategories (activeElement) {
+		const menu =  document.querySelector(".faq__categories-inner")
+		const menuWrapper = document.querySelector(".faq__categories")
+		const menuWidth = menu.getBoundingClientRect().width
+		const menuOffsetLeft = menu.getBoundingClientRect().left
+		const menuWrapperOffsetLeft = menuWrapper.getBoundingClientRect().left
+		const nextActiveElement = activeElement.nextElementSibling
+		const previousActiveElement = activeElement.previousElementSibling
+
+		if (nextActiveElement) {
+			const nextActiveElementOffsetRight = nextActiveElement.getBoundingClientRect().right - menuOffsetLeft
+			if (nextActiveElementOffsetRight > menuWidth) {
+				const menuOffset = menuWidth - nextActiveElementOffsetRight
+				menu.style.transform = `translateX(${menuOffset}px)`;
+			}
+		} 
+		if (previousActiveElement) {
+			const previousActiveElementOffsetLeft = previousActiveElement.getBoundingClientRect().left - menuOffsetLeft;
+			if ((previousActiveElementOffsetLeft - menuWrapperOffsetLeft) < 0) {
+			  const menuOffset = Math.min(-previousActiveElementOffsetLeft, 0);
+			  menu.style.transform = `translateX(${menuOffset}px)`;
+			}
+		  }
+
+
+}
+
 function toggleFaqCategories (faqCategories, faqItems) {
 	let categories = document.querySelectorAll(faqCategories)
 	if (!categories.length) return
@@ -77,6 +105,7 @@ function toggleFaqCategories (faqCategories, faqItems) {
 			activeCategory = e.currentTarget
 			activeCategory.classList.add('active')
 			filterItems(items, activeCategory)
+			autoScrollFaqCategories(activeCategory)
 		})
 	}
 
@@ -212,6 +241,8 @@ function valuesSlider() {
 		pagination: {
 			el: ".values-pagination",
 			clickable: true,
+			dynamicBullets: true,
+			dynamicMainBullets: 1,
 			renderBullet: function (index, className) {
 				let preValue = ''	
 				if ( index < 9) {
@@ -225,11 +256,6 @@ function valuesSlider() {
 		  },
 
 
-		// breakpoints: {
-		// 	992: {
-		// 		slidesPerView: 1,
-		// 	},
-		// }
 	});
 }
 

@@ -8,8 +8,12 @@
         padding: 4px;
         border-radius: 45px;
         background-color: #fff;
-        display: flex;
+        
         margin-bottom: 2rem;
+        &-inner {
+            display: flex;
+            transition: all 400ms;
+        }
     }
     &__category {
         white-space: nowrap;
@@ -94,7 +98,7 @@
     @media screen and (max-width: 767px) {
         &__categories {
             // width: 690px;
-            overflow-y: auto;
+            overflow: hidden;
         }
     }
     @media screen and (max-width: 575px) {

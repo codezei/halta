@@ -132,7 +132,7 @@
             margin-bottom: 1.5rem;
         }
         &__title {
-            margin-bottom: 1rem;
+            margin-bottom: 0;
         }
         &__list {
             flex-direction: column;
@@ -162,6 +162,14 @@
     @media screen and (max-width: 575px) {
         padding: 25px 0;
 
+        &__title {
+            font-size: 20px;
+        }
+
+        &__text {
+            display: none;
+        }
+
         &__item {
             &-icon {
                 width: 44px;
@@ -178,6 +186,11 @@
             &.active &-name {
                 font-size: 1.25rem;
             }
+     
+            &.active &-btn {
+                max-width: 168px;
+            }
+            
         }
 
     }

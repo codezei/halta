@@ -116,7 +116,7 @@
             transform: scale(-1, 1);
         }
         &:not(.prev, .next) {
-            border: 1px solid var(--bg-light-septenary);
+            // border: 1px solid var(--bg-light-septenary);
             &:not(.dots):hover {
                 background-color: var(--bg-light-septenary);
             }

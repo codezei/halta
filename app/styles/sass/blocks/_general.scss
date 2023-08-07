@@ -145,7 +145,7 @@ h6 {
 }
 @media screen and (max-width: 575px) {
     h1 {
-        font-size: 1.75rem;
+        font-size: 2rem;
     }
     h2 {
         font-size: 1.5rem;
@@ -164,8 +164,9 @@ h6 {
     }
 
 }
+
+
 h1, h2 {
-    letter-spacing: -3%;
     line-height: 1.1;
 }
 h3, h4, h5, h6 {
@@ -367,13 +368,15 @@ a {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
     font-weight: 600;
+    line-height: 1;
+    font-style: italic;
     span {
         background-color: var(--brand-purple-normal);
         color: #fff;
         display: inline-block;
         border-radius: 14px;
-        padding: 8px;
-        font-style: italic;
+        padding: 8px 8px 12px;
+        
     }
     @media screen and (max-width: 575px) {
         font-size: 1.25rem;
@@ -427,5 +430,12 @@ a {
     &:hover {
         text-decoration: underline;
         color: var(--brand-purple-dark);
+    }
+}
+
+@media screen and (min-width: 375px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }
