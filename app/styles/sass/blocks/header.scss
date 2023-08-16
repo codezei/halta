@@ -5,7 +5,6 @@
     left: 0;
     width: 100%;
     z-index: 12;
-    // opacity: 0;
     animation-name: fadeIn;
     animation-duration: 500ms;
     animation-fill-mode: forwards;
@@ -93,14 +92,11 @@
         &__inner {
             flex-wrap: wrap;
             position: relative;  
+            
         }
         &.active {
-            // background: rgb(31,31,31);
-            // background: linear-gradient(49deg, rgba(31,31,31,0.67) 0%, rgba(31,31,31,0.5) 50%, rgba(31,31,31,0.67) 100%);
-            height: 100vh;
+            height: calc(100vh - calc(100vh - 100%));
             color: var(--text-light-primary);
-
-            // color: #fff;
             &:before {
                 content: "";
                 display: block;
@@ -110,11 +106,7 @@
                 width: 100%;
                 height: 100%;
                 background-color: #fff;
-                // background: linear-gradient(49deg, rgba(31,31,31,0.67) 0%, rgba(31,31,31,0.5) 50%, rgba(31,31,31,0.67) 100%), url(../images/dist/header.jpg);
-                // background-size: cover;
-                // background-position: top right;
                 z-index: -1;
-                // animation: headerSlideIn 400ms;
             }
         }
         &.active .container {
@@ -123,18 +115,18 @@
         &.active &__inner {
             backdrop-filter: none;
             background-color: transparent;
-            border-radius: none;
-            padding-bottom: 60px;
+            border-radius: 0;
+            align-items: flex-start;
         }
         
         &__navigation {
             display: none;
             order: 3;
-            width: 100%;
-            margin-top: 15px;
-            padding-top: 15px;
-            // border-top: 1px solid #ddd;
+            margin-top: 0;
+            padding-top: 30px;
             flex-direction: column;
+            height: 100%;
+            padding-bottom: 60px;
             &.active {
                 display: flex;
                 flex-direction: column-reverse;
@@ -152,9 +144,6 @@
                 width: 40px;
                 height: 40px;
                 padding: 10px;
-  
-                // background: transparent;
-                // position: relative;
                 order: 2;
                 &--inner {
                     width: 18px;
@@ -210,12 +199,10 @@
             }   
             &-secondary {
                 order: 1;
-                margin-bottom: 40px;
             }
             .menu {
                 flex-direction: column;
                 align-items: flex-start;
-                // text-align: center;
                 .current-menu-item {
                     background-color: var(--brand-purple-light-max);
                     border-left: 2px solid var(--brand-purple-normal);
@@ -223,10 +210,10 @@
                 li {
                     width: 100%;
                     padding: 0;
-                    // border-bottom: 1px solid var(--bg-light-secondary);
                 }
                 a {
                     padding: 20px;
+                    width: 100%;
                 }
             }
 
