@@ -19,6 +19,7 @@
     &.active, &.active .menu {
         // background: var(--light-blue);
     }
+
     &__logo {
         flex-shrink: 0;
         a {
@@ -336,4 +337,7 @@
        // opacity: 1;
        transform: translateX(0);
     }
+}
+body:has(.header.active) {
+    overflow: hidden;
 }
