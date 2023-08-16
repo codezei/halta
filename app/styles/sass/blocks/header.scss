@@ -13,6 +13,7 @@
     .promo &.sticky:not(.active) &__inner{
         background-color: var(--bg-light-secondary);
         color: #fff;
+        transition: none;
     }
     
 
