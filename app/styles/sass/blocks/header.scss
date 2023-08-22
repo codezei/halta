@@ -10,15 +10,11 @@
     animation-fill-mode: forwards;
     animation-delay: 200ms;
     transform: translateY(-100%);
-    .promo &.sticky:not(.active) &__inner{
+    .promo &.sticky:not(.active) &__inner, 
+    .home &.sticky:not(.active) &__inner {
         background-color: var(--bg-light-secondary);
         color: #fff;
         transition: none;
-    }
-    
-
-    &.active, &.active .menu {
-        // background: var(--light-blue);
     }
 
     &__logo {

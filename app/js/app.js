@@ -65,6 +65,9 @@ function toggleFaqItems (faqItemsQuestion) {
 }
 
 function autoScrollFaqCategories (activeElement) {
+	if (document.documentElement.clientWidth > 991) {
+		return
+	}
 		const menu =  document.querySelector(".faq__categories-inner")
 		const menuWrapper = document.querySelector(".faq__categories")
 		const menuWidth = menu.getBoundingClientRect().width
@@ -83,12 +86,10 @@ function autoScrollFaqCategories (activeElement) {
 		if (previousActiveElement) {
 			const previousActiveElementOffsetLeft = previousActiveElement.getBoundingClientRect().left - menuOffsetLeft;
 			if ((previousActiveElementOffsetLeft - menuWrapperOffsetLeft) < 0) {
-			  const menuOffset = Math.min(-previousActiveElementOffsetLeft, 0);
-			  menu.style.transform = `translateX(${menuOffset}px)`;
+				const menuOffset = Math.min(-previousActiveElementOffsetLeft, 0);
+				menu.style.transform = `translateX(${menuOffset}px)`;
 			}
-		  }
-
-
+		}
 }
 
 function toggleFaqCategories (faqCategories, faqItems) {

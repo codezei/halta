@@ -124,6 +124,13 @@
     }
     &__title {
         margin-bottom: 1.5rem;
+        a {
+            color: inherit;
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
     &__row {
         display: flex;
