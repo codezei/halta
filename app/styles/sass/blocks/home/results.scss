@@ -1,0 +1,33 @@
+.results {
+    &__title {
+        margin-bottom: 2rem;
+        &-main {
+            text-align: center;
+        }
+        
+    }
+    &__inner {
+        padding: 2rem;
+        border-radius: 2rem;
+        margin-top: 4rem;
+        background-color: rgba(0, 0, 0, 0.04);
+    }
+    @media screen and (max-width: 1199px) {
+        &__text {
+            margin-bottom: 1.5rem;
+        }
+    }
+    @media screen and (max-width: 1199px) {
+
+    }
+    @media screen and (max-width: 575px) {
+        &__title {
+            margin-bottom: 1.5rem;
+        }
+        &__inner {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border-radius: 1.5rem;
+        }
+    }
+}

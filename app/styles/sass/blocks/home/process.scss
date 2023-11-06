@@ -1,0 +1,81 @@
+.process {
+    margin-bottom: 100px;
+    &__subtitle {
+        margin-bottom: 2rem;
+    }
+    &__title {
+        margin-bottom: 2rem;
+    }
+    &__text {
+        margin-bottom: 2rem;
+    }
+    &__row {
+        gap: 20px 0;
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    &__col {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    &__notify {
+        padding: 1.5rem 2rem;
+        border-radius: 100px;
+        h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+        }
+        &--blue {
+            background-color: var(--brand-blue-normal);
+        }
+        &--purple {
+            background-color: var(--brand-purple-normal);
+            color: #fff;
+        }
+        &--white {
+            background-color: #fff;
+        }
+        &--center {
+            text-align: center;
+        }
+    }
+    &__img {
+        border-radius: 3rem;
+        width: 100%;
+    }
+
+    @media screen and (max-width: 991px) {
+        &__subtitle {
+            margin-bottom: 1.5rem;
+        }
+        &__title {
+            margin-bottom: 1.5rem;
+        }
+        &__text {
+            margin-bottom: 1.5rem;
+        }
+        &__btn {
+            margin-bottom: 1.5rem;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        &__img {
+            border-radius: 2rem;
+        }
+    }
+    @media screen and (max-width: 575px) {
+        margin-bottom: 50px;
+        &__img {
+            border-radius: 1.5rem;
+        }
+        &__list {
+            max-width: 280px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        &__notify {
+            padding: 1rem;
+            border-radius: 2rem;
+        }
+    }
+}

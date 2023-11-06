@@ -1,0 +1,114 @@
+.intro {
+    &__info {
+        background-color: var(--brand-blue-light-max);
+        padding: 1.5rem;
+        border-radius: 1.5rem;
+        margin-bottom: 16px;
+    }
+    &__col {
+        padding-left: 8px;
+        padding-right: 8px;
+        &--main {
+            display: flex;
+            flex-direction: column;
+            
+        }
+    }
+    &__info {
+        flex-grow: 1;
+    }
+    &__row {
+        margin-left: -8px;
+        margin-right: -8px;
+        gap: 16px 0;
+    }
+    &__home {
+        position: relative;
+        height: 100%;
+        &-img {
+            border-radius: 1.5rem;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+        &-btn {
+            position: absolute;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-light-septenary);
+            color: var(--bg-light-primary);
+            transform: rotate(90deg);
+            
+        }
+    }
+
+    @media screen and (max-width: 1199px) {
+        &__home {
+            &-img {
+                height: 400px;
+            }
+        }
+    }
+
+}
+
+
+.preview {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        opacity: 0.4;
+    }
+    &--about {
+        background-color: var(--bg-light-primary);
+    }
+    &--about:after {
+        
+        background-image: url(../images/dist/about-bg.svg);
+        background-repeat: no-repeat;
+        background-position: bottom right;
+    }
+    &--case {
+        background-color: var(--brand-purple-normal);
+    }
+    &--case:after {
+        
+        background-image: url(../images/dist/case-bg.svg);
+        background-repeat: no-repeat;
+        background-position: bottom 2rem right 2rem;
+    }
+    &__title {
+        margin-bottom: 1rem;
+    }
+    &__text {
+        margin-bottom: 3rem;
+        opacity: 0.6;
+    }
+    &__btn {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--bg-light-septenary);
+        color: var(--bg-light-primary);
+        &:hover {
+            background-color: var(--bg-light-primary);
+            color: var(--bg-light-septenary);
+        }
+    }
+}

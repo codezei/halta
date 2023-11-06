@@ -24,7 +24,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		mobile: true,
 		live: true}).init()
 	smoothScroll() 
-
+	testimonialsSlider()
+	toggleRecruitment ()
 })
 
 
@@ -445,5 +446,56 @@ function smoothScroll() {
 				requestAnimationFrame(step)
 			}
 		});
+	}
+}
+
+
+function testimonialsSlider() {
+	let swiper = new Swiper(".testimonials-slider", {
+		slidesPerView: 1,
+		spaceBetween: 24,
+		navigation: {
+			nextEl: ".testimonials-button-next",
+			prevEl: ".testimonials-button-prev",
+		},
+		pagination: {
+			el: ".testimonials-pagination",
+		  },
+		breakpoints: {
+			1199: {
+				slidesPerView: 3
+			},
+			991: {
+				slidesPerView: 2
+			},
+			575: {
+				slidesPerView: 1
+			},
+		}
+	});
+}
+
+function toggleRecruitment () {
+	let buttons = document.querySelectorAll('.recruitment__btn')
+	let items = document.querySelectorAll('.recruitment__item')
+	let activeItem
+	for(let i = 0; i < buttons.length; i++) {
+		buttons[i].addEventListener('click', function (e) {
+			for(let k = 0; k < items.length; k++) {
+				if (buttons[k].classList.contains('active')) {
+					buttons[k].classList.remove('active')
+				}
+				if (items[k].classList.contains('active')) {
+					items[k].classList.remove('active')
+				}
+				if (e.currentTarget.dataset.category === items[k].dataset.category) {
+					activeItem = items[k]
+				}
+			}
+
+			e.currentTarget.classList.add('active')
+			activeItem.classList.add('active')
+
+		})
 	}
 }

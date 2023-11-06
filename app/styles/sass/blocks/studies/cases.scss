@@ -1,0 +1,35 @@
+.cases {
+    margin-bottom: 100px;
+    @media screen and (max-width: 575px) {
+        margin-bottom: 50px;
+    }
+}
+
+.case {
+    &:not(:last-of-type) {
+        margin-bottom: 100px;
+    }
+    &__row {
+        justify-content: space-between;
+    }
+    &__title {
+        margin-bottom: 2rem;
+    }
+    &__text {
+        &:not(:last-of-type) {
+            margin-bottom: 1.5rem;
+        }
+    }
+    @media screen and (max-width: 1199px) {
+        &__row {
+            justify-content: center;
+        }
+    }
+
+
+    @media screen and (max-width: 575px) {
+        &:not(:last-of-type) {
+            margin-bottom: 50px;
+        }
+    }
+}
