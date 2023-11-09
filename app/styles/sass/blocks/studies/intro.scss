@@ -42,6 +42,7 @@
             background-color: var(--bg-light-septenary);
             color: var(--bg-light-primary);
             transform: rotate(90deg);
+            cursor: default;
             
         }
     }
@@ -107,8 +108,8 @@
         background-color: var(--bg-light-septenary);
         color: var(--bg-light-primary);
         &:hover {
-            background-color: var(--bg-light-primary);
-            color: var(--bg-light-septenary);
+            background-color: var(--bg-light-secondary);
+            color: #fff;
         }
     }
 }
